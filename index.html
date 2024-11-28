@@ -7,14 +7,15 @@
   <link rel="icon" href="https://shahid24x7free02.github.io/my-photo.jpg" type="image/x-icon">
   <title>Mustafa WorkSheet</title>
   <style>
-     @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       width: 100%;
       font-family: 'Poppins', sans-serif;
-    font-style: normal;
+      font-style: normal;
     }
 
     body {
@@ -34,7 +35,7 @@
       display: flex;
       justify-content: space-around;
       padding: 15px 0;
-      background-color: #00d1b2; 
+      background-color: #00d1b2;
       color: white;
       position: sticky;
       top: 0;
@@ -53,12 +54,12 @@
     .stage.active {
       color: #00d1b2;
       background-color: white;
-      border-radius: 5px;
+      border-radius: 5px 5px 0 0;
     }
 
     .form-content {
       flex: 1;
-      padding: 15px;
+      padding: 10px;
       margin-bottom: 70px;
     }
 
@@ -105,7 +106,7 @@
       font-size: 16px;
       font-weight: bold;
       border: none;
-      border-radius: 5px;
+      border-radius: 5px 5px 0 0;
       cursor: pointer;
     }
 
@@ -166,7 +167,7 @@
       align-items: center;
       justify-content: center;
       background: white;
-      border-radius: 5px;
+      border-radius: 5px 5px 0 0;
       padding: 5px;
       width: 100%;
       display: grid;
@@ -178,12 +179,22 @@
 
     Input {
       width: 100%;
-      border-radius: 5px;
+      border-radius: 5px 5px 0 0;
       background-color: #CEFFCD;
-      font-size: 20px;
+      font-size: 16px;
       padding: 10px 5px;
-      border: 0px;
-      /*background: lightgray;*/
+      border: none;
+      border-bottom: #ccc 2.5px solid;
+      outline: none;
+      transition: border 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Style when input is focused */
+    input:focus, select:focus {
+
+      border-bottom: 3px solid #4CAF50;
+      box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+      /* Glowing effect */
     }
 
     label {
@@ -192,14 +203,17 @@
     }
 
     select {
+      outline: none;
+      transition: border 0.3s ease, box-shadow 0.3s ease;
       background-color: #C0C5FF;
-      font-size: 15px;
+      font-size: 12px;
       padding: 12.5px 0.5%;
-      border: 0px;
-      border-radius: 5px;
-      /* background: lightpink;*/
+      border: none;
+      border-radius: 5px 5px 0 0;
+      border-bottom: #ccc 2.5px solid;
     }
-    summary{
+
+    summary {
       cursor: pointer;
     }
   </style>
@@ -213,7 +227,9 @@ text-align: center;
     line-height: 1.125;">
     <h1>Atma Leather PVT</h1>
     <h2>Mustafa WorkSheet</h2>
-    <a style="text-decoration: none; color: white;" href="https://shahid24x7.free.nf/"> <h5>By- SHAHID 🔗</h5></a>
+    <a style="text-decoration: none; color: white;" href="https://shahid24x7.free.nf/">
+      <h5>By- SHAHID 🔗</h5>
+    </a>
   </div>
   <div class="progress-bar">
     <div class="stage active" id="stage1">Stage 1</div>
@@ -233,7 +249,7 @@ text-align: center;
             <img src="../Mustafa-Atma-Leather/sound-wave.svg">
           </button>
           <label style="font-size: 25px;" for="dateInput">**Date:</label>
-          <input style="height:40px;" type="date" id="dateInput" name="dateInput" required >
+          <input style="height:40px;" type="date" id="dateInput" name="dateInput" required>
           <script>
             function readAloudGroup1() {
               const dateInput = document.getElementById('dateInput').value;
@@ -254,7 +270,7 @@ text-align: center;
       margin-top: 10px;
       width: 100%;
       padding: 5px;
-      border-radius: 5px;">
+      border-radius: 5px 5px 0 0;">
           <summary style="font-size: 18px;
 padding: 10px;">Main Product (Optional )</summary>
           <!-- Group 3 -->
@@ -267,8 +283,7 @@ padding: 10px;">Main Product (Optional )</summary>
 
             <div>
               <label for="NameofMainProduct">Name of Main Product:</label>
-              <input style="width: 100%;" type="text" placeholder=">Main Product" id="NameofMainProduct"
-                name="NameofMainProduct">
+              <input style="width: 100%;" type="text" placeholder=">Main Product" id="NameofMainProduct" name="NameofMainProduct">
             </div>
 
             <script>
@@ -327,7 +342,7 @@ padding: 10px;">Main Product (Optional )</summary>
       margin-top: 10px;
       width: 100%;
       padding: 5px;
-      border-radius: 5px;">
+      border-radius: 5px 5px 0 0;">
           <!-- Group 4 -->
           <h3 style="text-align: center;">Additional Expenditure</h3>
           <div style="grid-template-columns: 1fr 4fr 2fr 1fr;" class="inputGroupFilled">
@@ -339,12 +354,11 @@ padding: 10px;">Main Product (Optional )</summary>
 
             <div>
               <label for="AdIteme1">**items 1:</label>
-              <input style="width: 100%;" type="text" placeholder="Items" id="AdIteme1" value="Karigar"
-                name="AdIteme1" required >
+              <input style="width: 100%;" type="text" placeholder="Items" id="AdIteme1" value="Karigar" name="AdIteme1" required>
             </div>
             <div>
               <label for="AdItQuantity1">Quantity:</label>
-              <input style="width: 100%;" type="number" placeholder="Quantity" id="AdItQuantity1" name="AdItQuantity1" >
+              <input style="width: 100%;" type="number" placeholder="Quantity" id="AdItQuantity1" name="AdItQuantity1">
             </div>
             <div>
               <label for="AdItAmount1">Amount:</label>
@@ -682,8 +696,7 @@ padding: 10px;">
               </div>
               <div>
                 <label for="AdItQuantity10">Quantity:</label>
-                <input style="width: 100%;" type="number" placeholder="Quantity" id="AdItQuantity10"
-                  name="AdItQuantity10">
+                <input style="width: 100%;" type="number" placeholder="Quantity" id="AdItQuantity10" name="AdItQuantity10">
               </div>
               <div>
                 <label for="AdItAmount10">Amount:</label>
@@ -720,8 +733,7 @@ padding: 10px;">
               </div>
               <div>
                 <label for="AdItQuantity11">Quantity:</label>
-                <input style="width: 100%;" type="number" placeholder="Quantity" id="AdItQuantity11"
-                  name="AdItQuantity11">
+                <input style="width: 100%;" type="number" placeholder="Quantity" id="AdItQuantity11" name="AdItQuantity11">
               </div>
               <div>
                 <label for="AdItAmount11">Amount:</label>
@@ -759,7 +771,7 @@ padding: 10px;">
       margin-top: 10px;
       width: 100%;
       padding: 5px;
-      border-radius: 5px;">
+      border-radius: 5px 5px 0 0;">
           <!-- Group 2.1 -->
           <h3 style="text-align: center;">Components/Accessories</h3>
           <div style="grid-template-columns: 1fr 6fr 1.5fr 2fr;" class="inputGroupFilled">
@@ -769,7 +781,7 @@ padding: 10px;">
             </button>
             <div>
               <label for="Components1">**Components 1:</label>
-              <input type="text" id="Components1" name="Components1" placeholder="Components" required >
+              <input type="text" id="Components1" name="Components1" placeholder="Components" required>
             </div>
             <div>
               <label for="CompQuan1">Quantity:</label>
@@ -778,6 +790,7 @@ padding: 10px;">
             <div>
               <label style="color: transparent;" for="CompQN1">g</label>
               <select id="CompQN1" name="CompQN1">
+                <option>choose</option>
                 <option value="peace">Peace</option>
                 <option value="liter">Liter</option>
                 <option value="miter">Miter</option>
@@ -825,6 +838,7 @@ padding: 10px;">
             <div>
               <label style="color: transparent;" for="CompQN1">g</label>
               <select id="CompQN2" name="CompQN2">
+                <option>choose</option>
                 <option value="peace">Peace</option>
                 <option value="liter">Liter</option>
                 <option value="miter">Miter</option>
@@ -872,6 +886,7 @@ padding: 10px;">
             <div>
               <label style="color: transparent;" for="CompQN1">g</label>
               <select id="CompQN3" name="CompQN3">
+                <option>choose</option>
                 <option value="peace">Peace</option>
                 <option value="liter">Liter</option>
                 <option value="miter">Miter</option>
@@ -919,6 +934,7 @@ padding: 10px;">
             <div>
               <label style="color: transparent;" for="CompQN1">g</label>
               <select id="CompQN4" name="CompQN4">
+                <option>choose</option>
                 <option value="peace">Peace</option>
                 <option value="liter">Liter</option>
                 <option value="miter">Miter</option>
@@ -966,6 +982,7 @@ padding: 10px;">
             <div>
               <label style="color: transparent;" for="CompQN1">g</label>
               <select id="CompQN5" name="CompQN5">
+                <option>choose</option>
                 <option value="peace">Peace</option>
                 <option value="liter">Liter</option>
                 <option value="miter">Miter</option>
@@ -1019,6 +1036,7 @@ padding: 10px;">
               <div>
                 <label style="color: transparent;" for="CompQN1">g</label>
                 <select id="CompQN6" name="CompQN6">
+                  <option>choose</option>
                   <option value="peace">Peace</option>
                   <option value="liter">Liter</option>
                   <option value="miter">Miter</option>
@@ -1066,6 +1084,7 @@ padding: 10px;">
               <div>
                 <label style="color: transparent;" for="CompQN1">g</label>
                 <select id="CompQN7" name="CompQN7">
+                  <option>choose</option>
                   <option value="peace">Peace</option>
                   <option value="liter">Liter</option>
                   <option value="miter">Miter</option>
@@ -1113,6 +1132,7 @@ padding: 10px;">
               <div>
                 <label style="color: transparent;" for="CompQN1">g</label>
                 <select id="CompQN8" name="CompQN8">
+                  <option>choose</option>
                   <option value="peace">Peace</option>
                   <option value="liter">Liter</option>
                   <option value="miter">Miter</option>
@@ -1160,6 +1180,7 @@ padding: 10px;">
               <div>
                 <label style="color: transparent;" for="CompQN1">g</label>
                 <select id="CompQN9" name="CompQN9">
+                  <option>choose</option>
                   <option value="peace">Peace</option>
                   <option value="liter">Liter</option>
                   <option value="miter">Miter</option>
@@ -1207,6 +1228,7 @@ padding: 10px;">
               <div>
                 <label style="color: transparent;" for="CompQN1">g</label>
                 <select id="CompQN10" name="CompQN10">
+                  <option>choose</option>
                   <option value="peace">Peace</option>
                   <option value="liter">Liter</option>
                   <option value="miter">Miter</option>
@@ -1247,11 +1269,11 @@ padding: 10px;">
     <div class="input-group" id="stage3Fields" style="display: none;">
       <div class="stage1body">
 
-        <div style="background:  #F4C0FF;
+        <div style="background:  #8aedae;
       margin-top: 10px;
       width: 100%;
       padding: 5px;
-      border-radius: 5px;">
+      border-radius: 5px 5px 0 0;">
           <!-- Group 2.1 -->
           <h3 style="text-align: center;">Scrap </h3>
           <div style="grid-template-columns: 1fr 6fr 1.5fr 2fr;" class="inputGroupFilled">
@@ -1261,15 +1283,16 @@ padding: 10px;">
             </button>
             <div>
               <label for="Scrap1">**Scrap 1:</label>
-              <input type="text" id="Scrap1" name="Scrap1" placeholder="Scrap" required >
+              <input type="text" id="Scrap1" name="Scrap1" placeholder="Scrap" required>
             </div>
             <div>
               <label for="ScrapQuan1">Quantity:</label>
-              <input type="number" id="ScrapQuan1" name="ScrapQuan1" placeholder="123..." >
+              <input type="number" id="ScrapQuan1" name="ScrapQuan1" placeholder="123...">
             </div>
             <div>
               <label style="color: transparent;" for="CompQN1">g</label>
               <select id="ScrapQN1" name="ScrapQN1">
+                <option>choose</option>
                 <option value="peace">Peace</option>
                 <option value="liter">Liter</option>
                 <option value="miter">Miter</option>
@@ -1317,6 +1340,7 @@ padding: 10px;">
             <div>
               <label style="color: transparent;" for="CompQN1">g</label>
               <select id="ScrapQN2" name="ScrapQN2">
+                <option>choose</option>
                 <option value="peace">Peace</option>
                 <option value="liter">Liter</option>
                 <option value="miter">Miter</option>
@@ -1364,6 +1388,7 @@ padding: 10px;">
             <div>
               <label style="color: transparent;" for="CompQN1">g</label>
               <select id="ScrapQN3" name="ScrapQN3">
+                <option>choose</option>
                 <option value="peace">Peace</option>
                 <option value="liter">Liter</option>
                 <option value="miter">Miter</option>
@@ -1411,6 +1436,7 @@ padding: 10px;">
             <div>
               <label style="color: transparent;" for="CompQN1">g</label>
               <select id="ScrapQN4" name="ScrapQN4">
+                <option>choose</option>
                 <option value="peace">Peace</option>
                 <option value="liter">Liter</option>
                 <option value="miter">Miter</option>
@@ -1458,6 +1484,7 @@ padding: 10px;">
             <div>
               <label style="color: transparent;" for="CompQN1">g</label>
               <select id="ScrapQN5" name="ScrapQN5">
+                <option>choose</option>
                 <option value="peace">Peace</option>
                 <option value="liter">Liter</option>
                 <option value="miter">Miter</option>
@@ -1503,6 +1530,7 @@ padding: 10px;">
             <div>
               <label style="color: transparent;" for="CompQN1">g</label>
               <select id="ScrapQN6" name="ScrapQN6">
+                <option>choose</option>
                 <option value="peace">Peace</option>
                 <option value="liter">Liter</option>
                 <option value="miter">Miter</option>
@@ -1550,6 +1578,7 @@ padding: 10px;">
             <div>
               <label style="color: transparent;" for="CompQN1">g</label>
               <select id="ScrapQN7" name="ScrapQN7">
+                <option>choose</option>
                 <option value="peace">Peace</option>
                 <option value="liter">Liter</option>
                 <option value="miter">Miter</option>
@@ -1585,15 +1614,13 @@ padding: 10px;">
 
       </div>
     </div>
-    <div
-id="message"
-style="
+    <div id="message" style="
   display: none;
   font-weight: bold;
   color: green;
   padding: 20px;
   background-color: beige;
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0;
   border-color: aquamarine;
   width: 80vw;
   position: fixed;
@@ -1603,18 +1630,17 @@ style="
   max-width: 400px;
   z-index: 10;
   text-align: center;
-"
-></div>
-  
+"></div>
 
-  <!-- Navigation Bar -->
-  <div class="buttons-bar">
-    <button type="button" class="back" onclick="navigateStage(-1)">Back</button>
-    <button type="button" class="next" onclick="navigateStage(1)">Next</button>
-    <button type="submit" class="submit" id="submit-button" >Submit</button>
-    <!-- onclick="setTimeout(() => location.reload(), 1000)" -->
-  </div>
-</form>
+
+    <!-- Navigation Bar -->
+    <div class="buttons-bar">
+      <button type="button" class="back" onclick="navigateStage(-1)">Back</button>
+      <button type="button" class="next" onclick="navigateStage(1)">Next</button>
+      <button type="submit" class="submit" id="submit-button">Submit</button>
+      <!-- onclick="setTimeout(() => location.reload(), 1000)" -->
+    </div>
+  </form>
 
 
   <script>
@@ -1662,23 +1688,23 @@ style="
     }
 
 
-    document.getElementById("form").addEventListener("submit", function (e) {
-        e.preventDefault(); // Prevent the default form submission
-        document.getElementById("message").textContent = "Submitting..";
-        document.getElementById("message").style.display = "block";
-        document.getElementById("submit-button").disabled = true;
+    document.getElementById("form").addEventListener("submit", function(e) {
+      e.preventDefault(); // Prevent the default form submission
+      document.getElementById("message").textContent = "Submitting..";
+      document.getElementById("message").style.display = "block";
+      document.getElementById("submit-button").disabled = true;
 
-        // Collect the form data
-        var formData = new FormData(this);
-        var keyValuePairs = [];
-        for (var pair of formData.entries()) {
-          keyValuePairs.push(pair[0] + "=" + pair[1]);
-        }
+      // Collect the form data
+      var formData = new FormData(this);
+      var keyValuePairs = [];
+      for (var pair of formData.entries()) {
+        keyValuePairs.push(pair[0] + "=" + pair[1]);
+      }
 
-        var formDataString = keyValuePairs.join("&");
+      var formDataString = keyValuePairs.join("&");
 
-        // Send a POST request to your Google Apps Script
-        fetch(
+      // Send a POST request to your Google Apps Script
+      fetch(
           "https://script.google.com/macros/s/AKfycbxyWZQ_wb2nLePoWqgl8O1PwMUKIiyQlpWXoj8HjnvGqFaC2puDECVWKB4zqyqmfKRJ/exec",
           {
             redirect: "follow",
@@ -1689,38 +1715,37 @@ style="
             },
           }
         )
-          .then(function (response) {
-            // Check if the request was successful
-            if (response) {
-              return response; // Assuming your script returns JSON response
-            } else {
-              throw new Error("Failed to submit the form.");
-            }
-          })
-          .then(function (data) {
-            // Display a success message
-            document.getElementById("message").textContent =
-              "Data submitted successfully!";
-            document.getElementById("message").style.display = "block";
-            document.getElementById("message").style.backgroundColor = "green";
-            document.getElementById("message").style.color = "beige";
-            document.getElementById("submit-button").disabled = false;
-            document.getElementById("form").reset();
+        .then(function(response) {
+          // Check if the request was successful
+          if (response) {
+            return response; // Assuming your script returns JSON response
+          } else {
+            throw new Error("Failed to submit the form.");
+          }
+        })
+        .then(function(data) {
+          // Display a success message
+          document.getElementById("message").textContent =
+            "Data submitted successfully!";
+          document.getElementById("message").style.display = "block";
+          document.getElementById("message").style.backgroundColor = "green";
+          document.getElementById("message").style.color = "beige";
+          document.getElementById("submit-button").disabled = false;
+          document.getElementById("form").reset();
 
-            setTimeout(function () {
-              document.getElementById("message").textContent = "";
-              document.getElementById("message").style.display = "none";
-            }, 2600);
-          })
-          .catch(function (error) {
-            // Handle errors, you can display an error message here
-            console.error(error);
-            document.getElementById("message").textContent =
-              "An error occurred while submitting the form.";
-            document.getElementById("message").style.display = "block";
-          });
-      });
-    
+          setTimeout(function() {
+            document.getElementById("message").textContent = "";
+            document.getElementById("message").style.display = "none";
+          }, 2600);
+        })
+        .catch(function(error) {
+          // Handle errors, you can display an error message here
+          console.error(error);
+          document.getElementById("message").textContent =
+            "An error occurred while submitting the form.";
+          document.getElementById("message").style.display = "block";
+        });
+    });
   </script>
 </body>
 
