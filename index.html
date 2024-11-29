@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,7 +38,7 @@
       color: white;
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 5;
     }
 
     .stage {
@@ -80,7 +79,7 @@
       background-color: white;
       border-top: 2px solid #ddd;
       box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
+      z-index: 8;
     }
 
     .buttons-bar .back {
@@ -193,7 +192,8 @@
     }
 
     /* Style when input is focused */
-    input:focus, select:focus {
+    input:focus,
+    select:focus {
 
       border-bottom: 3px solid #4CAF50;
       box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
@@ -1621,6 +1621,15 @@ padding: 10px;">
 
       </div>
     </div>
+    <div id="popup-overlay" style="display: none;
+position: fixed;
+z-index: 9;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.7);"></div>
+
     <div id="message" style="
   display: none;
   font-weight: bold;
@@ -1700,6 +1709,7 @@ padding: 10px;">
       e.preventDefault(); // Prevent the default form submission
       document.getElementById("message").textContent = "Submitting..";
       document.getElementById("message").style.display = "block";
+      document.getElementById("popup-overlay").style.display = "block";
       document.getElementById("submit-button").disabled = true;
 
       // Collect the form data
@@ -1744,6 +1754,7 @@ padding: 10px;">
           setTimeout(function() {
             document.getElementById("message").textContent = "";
             document.getElementById("message").style.display = "none";
+            document.getElementById("popup-overlay").style.display = "none";
           }, 2600);
         })
         .catch(function(error) {
