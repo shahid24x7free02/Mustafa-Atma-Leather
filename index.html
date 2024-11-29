@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -229,10 +230,206 @@ text-align: center;
     color: #fff;
     line-height: 1.125;">
     <h1>Atma Leather PVT</h1>
-    <h2>Mustafa WorkSheet</h2>
-    <a style="text-decoration: none; color: white;" href="https://shahid24x7.free.nf/">
-      <h5>🔗 BY SHAHID 🔗</h5>
-    </a>
+    <!------- pupup ------------------>
+    <style>
+      .MyCountanerResponse {
+            width: 80vw;
+            max-width: 768px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: white;
+            position: relative;
+            box-shadow: 0 5PX 15PX rgba(0, 0, 0, 0.3);
+        }
+
+        .dateheader {
+          color: black;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .month {
+            margin: 20px 0;
+        }
+
+        .month-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+            text-align: left;
+            padding-left: 5px;
+        }
+
+        .dates {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .date {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #ececff;
+            color: #555;
+            font-size: 14px;
+        }
+
+        /* Inline Loader Styles */
+        .inline-loader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 50;
+            border-radius: 10px;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #ddd;
+            border-top: 4px solid #555;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .MyPopupResponseOverlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 49;
+        }
+
+        .MyPopupResponseBox {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 50;
+        }
+
+        .MyPopupResponseBoxClose {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+            background-color: #00d1b2;
+            padding: 5px 50px;
+            border-bottom: #ccc 2.5px solid;
+      border-radius: 5px 5px 0 0;
+            margin-top: 20px;
+        }
+
+        .MyPopupResponseBoxClose:hover {
+            color: #6a2f79;
+        }
+
+        #MyPopupResponse:target .MyPopupResponseOverlay,
+        #MyPopupResponse:target .MyPopupResponseBox {
+            display: block;
+        }
+    </style>
+    <script>
+      const apiUrl = "https://script.google.com/macros/s/AKfycbxC_7n15FcSmAqx9k3y1W8xeKi7GbHXlbNmwjvl_a95d0PtPL8g4dWkymd0-iJJ4VDt/exec"; // Replace with your Web App U
+
+      // Show loader while fetching data
+      //document.getElementById("loader").style.display = "flex";
+
+      // Fetch data from Google Apps Script Web App
+      fetch(apiUrl)
+          .then(response => response.json())
+          .then(dataop => {
+              // Hide loader once data is fetched
+              document.getElementById("loader").style.display = "none";
+
+              const container = document.getElementById("responseContainer");
+
+              // Process and display the data
+              Object.keys(dataop).forEach(month => {
+                  // Create a section for each month
+                  const monthSection = document.createElement("div");
+                  monthSection.className = "month";
+
+                  const title = document.createElement("div");
+                  title.className = "month-title";
+                  title.textContent = month;
+
+                  const dates = document.createElement("div");
+                  dates.className = "dates";
+
+                  // Add dates as circles
+                  dataop[month].forEach(date => {
+                      const dateCircle = document.createElement("div");
+                      dateCircle.className = "date";
+                      dateCircle.textContent = date;
+                      dates.appendChild(dateCircle);
+                  });
+
+                  monthSection.appendChild(title);
+                  monthSection.appendChild(dates);
+                  container.appendChild(monthSection);
+              });
+          })
+  </script>
+    <div style="display: flex; flex-direction: row; align-items:center; justify-content:space-around;">
+      <div class="mySheetResponseCountener1">
+          <a href="https://shahid24x7.free.nf/"> <img style="width: 40px; border-radius: 50%;"
+                  src="https://shahid24x7free02.github.io/my-photo.jpg" alt="my photo"></a>
+      </div>
+      <div style="text-align: center; font-size: larger;">
+          <h3>Mustafa WorkSheet</h3>
+          <h5><a style="text-decoration: none; color: white;" href="https://shahid24x7.free.nf/">
+                  <h5>🔗 BY SHAHID 🔗</h5>
+              </a></h5>
+      </div>
+      <div style="font-size: 30px;">
+          <a style="text-decoration: none;" href="#MyPopupResponse">📔</a>
+      </div>
+  </div>
+  <div id="MyPopupResponse">
+      <div class="MyPopupResponseOverlay"></div>
+      <div class="MyPopupResponseBox">
+          
+          <div id="mainContent" class="MyCountanerResponse">
+            
+              <div class="dateheader">Date Responses</div>
+              <div id="responseContainer" style="position: relative; min-height: 200px;">
+                  <!-- Inline Loader -->
+                  <div id="loader" class="inline-loader">
+                      <div class="spinner"></div>
+                  </div>
+              </div>
+              <a class="MyPopupResponseBoxClose" href="#">Close</a>
+          </div>
+      </div>
+  </div>
   </div>
   <div class="progress-bar">
     <div class="stage active" id="stage1">Stage 1</div>
@@ -1723,7 +1920,7 @@ background: rgba(0, 0, 0, 0.7);"></div>
 
       // Send a POST request to your Google Apps Script
       fetch(
-          "https://script.google.com/macros/s/AKfycbxn_RnpY14PwNcVjAlASBQnwajgyUjWAwpI6KuiVlnOZG9pp2FpVKVZKtS7QSfh4vBl/exec",
+          "https://script.google.com/macros/s/AKfycbxC_7n15FcSmAqx9k3y1W8xeKi7GbHXlbNmwjvl_a95d0PtPL8g4dWkymd0-iJJ4VDt/exec",
           {
             redirect: "follow",
             method: "POST",
