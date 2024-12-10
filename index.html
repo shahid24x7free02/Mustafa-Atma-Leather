@@ -456,7 +456,7 @@ text-align: center;
           <script>
             function readAloudGroup1() {
               const dateInput = document.getElementById('dateInput').value;
-              const textToSpeak = [dateInput].filter(Boolean).join(' ');
+              const textToSpeak = ["Date", dateInput].filter(Boolean).join(' ');
 
               const button = document.getElementById('readButton1');
               if (textToSpeak.trim()) {
@@ -1490,11 +1490,11 @@ padding: 10px;">
             </button>
             <div>
               <label for="Scrap1">**Scrap 1:</label>
-              <input type="text" id="Scrap1" name="Scrap1" placeholder="Scrap" required>
+              <input type="text" id="Scrap1" name="Scrap1" placeholder="Scrap" value="Kacha Sulation" required>
             </div>
             <div>
               <label for="ScrapQuan1">Quantity:</label>
-              <input type="number" step="0.01" id="ScrapQuan1" name="ScrapQuan1" placeholder="123...">
+              <input type="number" step="0.01" id="ScrapQuan1" name="ScrapQuan1" placeholder="123..." required>
             </div>
             <div>
               <label style="color: transparent;" for="CompQN1">g</label>
@@ -1538,7 +1538,7 @@ padding: 10px;">
             </button>
             <div>
               <label for="Scrap2">Scrap 2:</label>
-              <input type="text" id="Scrap2" name="Scrap2" placeholder="Scrap">
+              <input type="text" id="Scrap2" name="Scrap2" placeholder="Scrap" value="Dandied Sulation">
             </div>
             <div>
               <label for="ScrapQuan2">Quantity:</label>
